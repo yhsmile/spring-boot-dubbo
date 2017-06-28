@@ -1,0 +1,53 @@
+#debug: true
+
+#alibaba Druid 数据源配置
+druid: 
+  jdbcUrl: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF8
+  username: root
+  password: root
+  initialSize: 10
+  maxActive: 10
+  minIdle: 0
+  maxIdle: 2
+  maxWait: 3000
+  removeAbandoned: true
+  removeAbandonedTimeout: 300
+  testOnBorrow: true
+  validationQuery: SELECT 1
+
+# mybatis 配置
+# 1) *Mapper.xml 文件路径
+mybatis:
+  mapper-locations:
+    - classpath:/mapper/*.xml
+# 2）实体类路径
+  type-aliases-package: com.example.demo.entity
+  check-config-location: true
+    
+#通用 Mapper 配置
+mapper:
+  mappers:
+    - com.example.demo.mapper.BizMapper
+  not-empty: false
+  identity: MYSQL
+  
+
+#MyBatis 分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+#dubbo服务提供者配置
+spring:
+  dubbo:
+    application:
+      name: example-provider        #应用名称
+    registry:
+      protocol: zookeeper           #注册中心协议
+      address: 127.0.0.1:2181       #注册中心地址
+    protocol:
+      name: dubbo                   #服务协议名称
+      port: 20880                   #服务协议端口
+    scan: com.example.demo.service  #服务类包目录 

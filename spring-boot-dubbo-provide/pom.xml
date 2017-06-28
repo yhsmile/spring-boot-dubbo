@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-boot-dubbo-provide</artifactId>
+	<packaging>jar</packaging>
+
+	<name>spring-boot-dubbo-provide</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>com.example</groupId>
+		<artifactId>spring-boot-dubbo-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../spring-boot-dubbo-parent/pom.xml</relativePath> <!-- lookup parent from repository -->
+	</parent>
+	
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		
+		<!-- 使用 @ConfigurationProperties 注解，必须要进行该依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        
+        
+        <!-- 引入接口和实体类依赖 -->
+        <dependency>
+			<groupId>com.example</groupId>
+			<artifactId>spring-boot-dubbo-api</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+        <!--通用 mapper-->
+        <dependency>
+            <groupId>tk.mybatis</groupId>
+            <artifactId>mapper-spring-boot-starter</artifactId>
+            <version>${mapper.spring.boot.version}</version>
+        </dependency>
+        
+        
+        <!-- alibaba druid 数据源  -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>druid</artifactId>
+		    <version>${druid.version}</version>
+		</dependency>
+        
+    
+		
+		<!-- mySql数据库驱动 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		
+		<!--分页插件 pagehelper-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>${pagehelper.spring.boot.version}</version>
+        </dependency>
+		
+		
+		<!-- dubbo -->  
+		<dependency>
+	        <groupId>io.dubbo.springboot</groupId>
+	        <artifactId>spring-boot-starter-dubbo</artifactId>
+	        <version>${spring.boot.dubbo.version}</version>
+	    </dependency>
+        
+        <!-- zookeeper -->
+        <dependency>  
+            <groupId>org.apache.zookeeper</groupId>  
+            <artifactId>zookeeper</artifactId>  
+            <version>${zookeeper.version}</version>  
+        </dependency>  
+        <dependency>  
+            <groupId>com.github.sgroschupf</groupId>  
+            <artifactId>zkclient</artifactId>  
+            <version>${zkclient.version}</version>  
+        </dependency>  
+        
+        <dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-lang3</artifactId>
+		    <version>${commons-lang3.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+		
+ 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+
+</project>
