@@ -46,8 +46,8 @@ spring:
       name: example-provider        #应用名称
     registry:
       protocol: zookeeper           #注册中心协议
-      address: 127.0.0.1:2181       #注册中心地址
+      address: 10.10.40.139:2181       #注册中心地址
     protocol:
       name: dubbo                   #服务协议名称
       port: 20880                   #服务协议端口
-    scan: com.example.demo.service  #服务类包目录 
+    scan: com.example.demo          #服务类包目录 

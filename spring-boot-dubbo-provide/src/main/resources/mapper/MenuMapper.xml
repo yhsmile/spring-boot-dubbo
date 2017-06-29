@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.MenuMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.Menu">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="menu_name" jdbcType="VARCHAR" property="menuName" />
+  </resultMap>
+  
+  <select id="findAll" resultMap="BaseResultMap">
+  	select * from sys_menu
+  </select>
+  
+  <insert id="save" parameterType="com.example.demo.entity.Menu">
+  	insert into sys_menu (id,menu_name)
+     values (#{id,jdbcType=VARCHAR},#{menuName,jdbcType=VARCHAR})
+  </insert>
+  
+</mapper>

@@ -11,7 +11,6 @@
   <url>http://maven.apache.org</url>
 
   <modules>
-  	<module>../spring-boot-dubbo-core</module>
   	<module>../spring-boot-dubbo-api</module>
   	<module>../spring-boot-dubbo-consume</module>
   	<module>../spring-boot-dubbo-provide</module>
